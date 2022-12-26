@@ -36,20 +36,15 @@
               <td><%= dataUsers[i].firstName %></td>
               <td><%= dataUsers[i].lastName %></td>
               <td>
-                <button type="button" class="btn btn-primary">
-                  <a
-                    href="/details/user/<%= dataUsers[i].id %>"
-                    target="_blank"
-                  >
-                    Detail
-                  </a>
-                </button>
-                <button type="button" class="btn btn-edit">
-                  <a href="#"> Edit </a>
-                </button>
-                <button type="button" class="btn btn-delete">
-                  <a href="#"> Delete </a>
-                </button>
+                <a href="/details/user/<%= dataUsers[i].id %>" target="_blank">
+                  <button type="button" class="btn btn-primary">Details</button>
+                </a>
+                <a href="#">
+                  <button type="button" class="btn btn-edit">Edit</button>
+                </a>
+                <a href="#">
+                  <button type="button" class="btn btn-delete">Delete</button>
+                </a>
               </td>
             </tr>
             <% } %>

@@ -1,18 +1,16 @@
-import connection from "../configs/connectDB";
-import { mutipleMysqlToObject } from "../utils";
+import pool from "../configs/connectDB";
 
 class HomeController {
   // [get] /
-  getHomePage(req, res, next) {
+  async getHomePage(req, res, next) {
     // simple query
-    connection.query("SELECT * FROM `users`", function (err, results, fields) {
-      if (err) {
-        console.log(err);
-        res.status(500).json({ error: err });
-      }
-
-      res.render("index", { dataUsers: results });
-    });
+    try {
+      const [rows, fields] = await pool.execute("SELECT * FROM users");
+      res.render("index", { dataUsers: rows });
+      console.log("Into Home page success!");
+    } catch (error) {
+      return next(error);
+    }
   }
 }
 
