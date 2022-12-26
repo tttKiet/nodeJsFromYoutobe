@@ -20,6 +20,16 @@ class HomeController {
 
     res.json(user);
   }
+
+  // [get] /create-new-user
+  async createNewUser(req, res, next) {
+    let user = req.body;
+    await pool.execute(
+      `insert into users(firstName, lastName, email,address) values(?,?,?,?)`,
+      [user.firstName, user.lastName, user.email, user.address]
+    );
+    res.redirect("/");
+  }
 }
 
 export default new HomeController();
