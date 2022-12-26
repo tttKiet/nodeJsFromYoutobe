@@ -1,4 +1,68 @@
-h1 {
-  color: green;
-  font-size: 18px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.btn {
+  padding: 4px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+
+.btn.btn-primary {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.btn.btn-edit {
+  background-color: #e5ed48;
+  color: rgb(87, 84, 84);
+}
+
+.btn.btn-delete {
+  background-color: #f70025;
+  color: rgb(255, 253, 253);
+}
+
+.btn:hover {
+  opacity: 0.74;
+}
+
+.btn:active {
+  background-color: #ccc;
+  color: bisque;
 }

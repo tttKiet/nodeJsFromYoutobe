@@ -11,7 +11,7 @@ class HomeController {
         res.status(500).json({ error: err });
       }
 
-      res.render("index", { data: JSON.stringify(results) });
+      res.render("index", { dataUsers: results });
     });
   }
 }
